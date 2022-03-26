@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 401683467}
   - component: {fileID: 401683466}
   - component: {fileID: 401683470}
+  - component: {fileID: 401683469}
   m_Layer: 5
   m_Name: Sky
   m_TagString: Untagged
@@ -220,6 +221,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401683464}
   m_CullTransparentMesh: 1
+--- !u!114 &401683469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401683464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e122fccb79ed2b34a9826ccd74cec344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _items:
+  - {fileID: 3173760984640519011, guid: 715fbc449de77234eb848d3005e8b22f, type: 3}
+  - {fileID: 3173760984640519011, guid: 86ab218dd33fa0d48ad53826e5be068f, type: 3}
+  - {fileID: 3173760984640519011, guid: b813d55f867c4ae4fa3e6709f0f10705, type: 3}
+  - {fileID: 3173760984640519011, guid: bec220f0973a626469fa4ee6f8920ca7, type: 3}
+  - {fileID: 3173760984640519011, guid: 4ec53ec3a964f774495f71c794e9feb3, type: 3}
 --- !u!114 &401683470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,10 +259,10 @@ MonoBehaviour:
         - m_Target: {fileID: 1017518705}
           m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
           m_MethodName: GetTouchPosition
-          m_Mode: 1
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 401683469}
+            m_ObjectArgumentAssemblyTypeName: TargetZone, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -345,6 +364,7 @@ GameObject:
   - component: {fileID: 741584349}
   - component: {fileID: 741584348}
   - component: {fileID: 741584352}
+  - component: {fileID: 741584351}
   m_Layer: 5
   m_Name: Sea
   m_TagString: Untagged
@@ -429,6 +449,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741584346}
   m_CullTransparentMesh: 1
+--- !u!114 &741584351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741584346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4078695256de134bacff9b8f5b16278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _items:
+  - {fileID: 3173760984640519011, guid: 905167755ec83f3419912b9b5c9d34fe, type: 3}
+  - {fileID: 3173760984640519011, guid: 905167755ec83f3419912b9b5c9d34fe, type: 3}
 --- !u!114 &741584352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,10 +484,10 @@ MonoBehaviour:
         - m_Target: {fileID: 1017518705}
           m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
           m_MethodName: GetTouchPosition
-          m_Mode: 1
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 741584351}
+            m_ObjectArgumentAssemblyTypeName: TargetZone, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -528,7 +563,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 519420031}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 10
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -658,8 +693,8 @@ MonoBehaviour:
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
+  m_RepeatDelay: 0
+  m_ForceModuleActive: 1
 --- !u!114 &912581662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -673,7 +708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
+  m_sendNavigationEvents: 0
   m_DragThreshold: 10
 --- !u!4 &912581663
 Transform:
@@ -843,7 +878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 4
+  - eventID: 3
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -876,4 +911,6 @@ MonoBehaviour:
   - {fileID: 3733875595080826729, guid: 657a8dcd6df277544a10216a326fb1b2, type: 3}
   - {fileID: 3733875595080826729, guid: 657a8dcd6df277544a10216a326fb1b2, type: 3}
   - {fileID: 3733875595080826729, guid: 657a8dcd6df277544a10216a326fb1b2, type: 3}
-  - {fileID: 3733875595080826729, guid: 657a8dcd6df277544a10216a326fb1b2, type: 3}
+  - {fileID: 3173760984640519011, guid: 5273306a79a21444e8c603c7f26c7c5e, type: 3}
+  - {fileID: 3173760984640519011, guid: 5273306a79a21444e8c603c7f26c7c5e, type: 3}
+  - {fileID: 3173760984640519011, guid: 5bb8ed91d6cefa644bdfa638c4f47be1, type: 3}

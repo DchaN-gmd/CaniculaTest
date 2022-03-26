@@ -1,17 +1,12 @@
 using UnityEngine;
 
-public class Star : MonoBehaviour, ISpawnable
+public class Item : MonoBehaviour, ISpawnable
 {
     [SerializeField] private Transform _rectTransform;
 
-    private void Start()
-    {
-        _rectTransform = gameObject.GetComponent<RectTransform>();
-    }
-
     public void SetPosition(Vector2 position)
     {
-        _rectTransform.localPosition = position;
+        _rectTransform.GetComponent<RectTransform>().anchoredPosition = position;
     }
 
     public GameObject GetGameObject()

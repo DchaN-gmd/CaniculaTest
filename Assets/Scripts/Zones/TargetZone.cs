@@ -12,8 +12,8 @@ public abstract class TargetZone : MonoBehaviour
             throw new System.Exception("Not enough objects");
         }
         var item = GetItem();
-        Instantiate(item.GetGameObject(), transform);
-        item.SetPosition(position);
+        var spawnedItem = Instantiate(item.GetGameObject(), transform);
+        spawnedItem.GetComponent<ISpawnable>().SetPosition(position);
         Debug.Log(position);
     }
 
